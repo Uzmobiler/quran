@@ -4,6 +4,7 @@ import androidx.compose.runtime.Composable
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
+import uz.mobiler.quran.ui.bottomNavigation.bottomBar.BottomBarScreen
 import uz.mobiler.quran.ui.pages.*
 import uz.mobiler.quran.ui.screen.Screen
 
@@ -21,6 +22,14 @@ fun NavGraph(navController:NavHostController) {
         ){
             MenuScreen(navController)
         }
+
+
+
+
+
+
+
+
 
 //        composable(
 //            route = Screen.Home.route
@@ -59,4 +68,6 @@ fun NavGraph(navController:NavHostController) {
 //            SettingsScreen()
 //        }
     }
+
+
 }
