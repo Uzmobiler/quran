@@ -24,6 +24,8 @@ fun MenuScreen(navController: NavHostController) {
 
     Scaffold(bottomBar = { MyBottomNavigation(navController = navController) }) {
         navController.navigate(BottomNavItem.Home.screen_route)
+
+        //
     }
 }
 @Composable
