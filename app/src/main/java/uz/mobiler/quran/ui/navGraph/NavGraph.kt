@@ -4,9 +4,7 @@ import androidx.compose.runtime.Composable
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
-import androidx.navigation.compose.rememberNavController
-import uz.mobiler.quran.ui.pages.HomeScreen
-import uz.mobiler.quran.ui.pages.SplashScreen
+import uz.mobiler.quran.ui.pages.*
 import uz.mobiler.quran.ui.screen.Screen
 
 @Composable
@@ -19,9 +17,46 @@ fun NavGraph(navController:NavHostController) {
         }
 
         composable(
-            route = Screen.Home.route
+            route = Screen.Menu.route
         ){
-            HomeScreen()
+            MenuScreen(navController)
         }
+
+//        composable(
+//            route = Screen.Home.route
+//        ){
+//            HomeScreen()
+//        }
+//
+//        composable(
+//            route = Screen.Quran.route
+//        ){
+//            QuranScreen()
+//        }
+//
+//        composable(
+//            route = Screen.Prayer.route
+//        ){
+//            PrayerScreen()
+//        }
+//
+//        composable(
+//            route = Screen.Settings.route
+//        ){
+//            SettingsScreen()
+//        }
+
+//        composable(BottomNavItem.Home.screen_route) {
+//            HomeScreen()
+//        }
+//        composable(BottomNavItem.Quran.screen_route) {
+//            QuranScreen()
+//        }
+//        composable(BottomNavItem.Prayer.screen_route) {
+//            PrayerScreen()
+//        }
+//        composable(BottomNavItem.Settings.screen_route) {
+//            SettingsScreen()
+//        }
     }
 }

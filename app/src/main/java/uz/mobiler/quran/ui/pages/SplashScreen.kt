@@ -131,7 +131,7 @@ fun SplashScreen(navController: NavController){
             }
             .fillMaxHeight(0.08f)
             .fillMaxWidth(0.4f), onClick = {
-            navController.navigate(route = Screen.Home.route){
+            navController.navigate(route = Screen.Menu.route){
                 popUpTo(Screen.Splash.route){
                     inclusive = true
                 }
