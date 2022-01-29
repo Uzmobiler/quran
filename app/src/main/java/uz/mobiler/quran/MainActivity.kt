@@ -12,9 +12,11 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.rememberNavController
+import dagger.hilt.android.AndroidEntryPoint
 import uz.mobiler.quran.ui.navGraph.NavGraph
 import uz.mobiler.quran.ui.theme.QuranTheme
 
+@AndroidEntryPoint
 class MainActivity : ComponentActivity() {
     lateinit var navController:NavHostController
     override fun onCreate(savedInstanceState: Bundle?) {
