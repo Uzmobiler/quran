@@ -39,13 +39,13 @@ fun SurahRow(data: Data) {
         ) {
             Box(contentAlignment = Alignment.Center) {
                 Image(painter = painterResource(id = R.drawable.ic_muslim_shape), "1")
-                Text(text = data.number.toString())
+                Text(text = data.number.toString(), color = Color.Black)
             }
             Spacer(modifier = Modifier.width(7.dp))
             Column {
-                Text(text = data.name.transliteration.id, fontWeight = FontWeight.Bold)
+                Text(text = data.name.transliteration.id, fontWeight = FontWeight.Bold,  color = Color.Black)
                 Row(verticalAlignment = Alignment.CenterVertically) {
-                    Text(text = data.revelation.id, fontSize = 10.sp)
+                    Text(text = data.revelation.id, fontSize = 10.sp,  color = Color.Black)
                     Spacer(modifier = Modifier.width(5.dp))
                     Box(
                         modifier = Modifier
@@ -54,7 +54,7 @@ fun SurahRow(data: Data) {
                             .background(Color.LightGray)
                     )
                     Spacer(modifier = Modifier.width(5.dp))
-                    Text(text = "${data.revelation} ayat", fontSize = 10.sp)
+                    Text(text = "${data.numberOfVerses} ayat", fontSize = 10.sp,  color = Color.Black)
                 }
             }
             Spacer(modifier = Modifier.weight(1.0f))
