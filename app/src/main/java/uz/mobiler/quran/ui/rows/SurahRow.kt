@@ -4,6 +4,7 @@ import android.graphics.fonts.FontStyle
 import androidx.compose.foundation.Canvas
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
+import androidx.compose.foundation.focusable
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.Text
@@ -29,7 +30,7 @@ import uz.mobiler.quran.ui.theme.BottomItemSelectedColor
 fun SurahRow(data: Data) {
     Column(modifier = Modifier
         .fillMaxWidth()
-        .padding(5.dp)) {
+        .padding(5.dp).focusable(true)) {
         Row(
             verticalAlignment = Alignment.CenterVertically,
             modifier = Modifier
