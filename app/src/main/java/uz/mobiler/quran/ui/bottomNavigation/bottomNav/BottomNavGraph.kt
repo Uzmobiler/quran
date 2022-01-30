@@ -16,8 +16,7 @@ import uz.mobiler.quran.vm.SurahViewModel
 fun BottomNavGraph(navController: NavHostController){
     NavHost(navController = navController, startDestination = BottomBarScreen.Home.route){
             composable(route = BottomBarScreen.Home.route){
-                val exampleViewModel = hiltViewModel<SurahViewModel>()
-                HomeScreen(exampleViewModel)
+                HomeScreen()
             }
         composable(route = BottomBarScreen.Quran.route){
             QuranScreen()
