@@ -150,14 +150,10 @@ fun HomeScreen(viewModel: SurahViewModel = hiltViewModel()) {
 fun LoadCard(){
     LazyColumn(modifier = Modifier
         .fillMaxSize()
-        .padding(10.dp)){
+        .padding(10.dp, 10.dp, 10.dp, 55.dp)){
         items(listCard.component1()) { data ->
             Log.d("TAG", "LoadData: $data")
             SurahRow(data = data)
         }
     }
-}
-@Composable
-fun LoadData(data: List<Data>?) {
-
 }

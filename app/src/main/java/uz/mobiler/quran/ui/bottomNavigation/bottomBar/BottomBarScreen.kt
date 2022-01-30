@@ -16,7 +16,7 @@ sealed class BottomBarScreen(
    object Home:BottomBarScreen(
        route = "home",
        title = "Home",
-       icon = R.drawable.ic_quran
+       icon = R.drawable.ic_books
    )
     object Quran:BottomBarScreen(
         route = "quran",
@@ -26,11 +26,11 @@ sealed class BottomBarScreen(
     object Prayer:BottomBarScreen(
         route = "prayer",
         title = "Prayer",
-        icon = R.drawable.ic_quran
+        icon = R.drawable.ic_prayer
     )
     object Settings:BottomBarScreen(
         route = "settings",
         title = "Settings",
-        icon = R.drawable.ic_quran
+        icon = R.drawable.ic_settings
     )
 }
