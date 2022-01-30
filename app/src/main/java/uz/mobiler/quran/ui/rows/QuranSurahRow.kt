@@ -9,6 +9,7 @@ import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.MutableState
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
@@ -27,7 +28,7 @@ import uz.mobiler.quran.ui.pages.SplashScreen
 import uz.mobiler.quran.ui.theme.BottomItemSelectedColor
 
 @Composable
-fun SurahRow(data: Data) {
+fun QuranSurahRow(data: Data) {
     Column(modifier = Modifier
         .fillMaxWidth()
         .padding(5.dp).focusable(true)) {
@@ -59,6 +60,7 @@ fun SurahRow(data: Data) {
             }
             Spacer(modifier = Modifier.weight(1.0f))
             Text(text = data.name.short, color = BottomItemSelectedColor)
+            Image(painter = painterResource(id = R.drawable.ic_baseline_arrow_forward_ios_24), "1", modifier = Modifier.padding(3.dp))
         }
         Row(modifier = Modifier
             .fillMaxWidth()
@@ -70,6 +72,6 @@ fun SurahRow(data: Data) {
 
 @Preview
 @Composable
-fun SurahRowPreview() {
+fun QuranSurahRowPreview() {
 
 }

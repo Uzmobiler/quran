@@ -13,18 +13,18 @@ import uz.mobiler.quran.ui.pages.*
 import uz.mobiler.quran.vm.SurahViewModel
 
 @Composable
-fun BottomNavGraph(navController: NavHostController){
-    NavHost(navController = navController, startDestination = BottomBarScreen.Home.route){
-            composable(route = BottomBarScreen.Home.route){
-                HomeScreen()
-            }
-        composable(route = BottomBarScreen.Quran.route){
+fun BottomNavGraph(navController: NavHostController) {
+    NavHost(navController = navController, startDestination = BottomBarScreen.Home.route) {
+        composable(route = BottomBarScreen.Home.route) {
+            HomeScreen()
+        }
+        composable(route = BottomBarScreen.Quran.route) {
             QuranScreen()
         }
-        composable(route = BottomBarScreen.Prayer.route){
+        composable(route = BottomBarScreen.Prayer.route) {
             PrayerScreen()
         }
-        composable(route = BottomBarScreen.Settings.route){
+        composable(route = BottomBarScreen.Settings.route) {
             SettingsScreen()
         }
     }
