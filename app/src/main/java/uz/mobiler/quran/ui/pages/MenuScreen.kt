@@ -22,11 +22,13 @@ import androidx.navigation.compose.rememberNavController
 import uz.mobiler.quran.R
 import uz.mobiler.quran.ui.bottomNavigation.bottomBar.BottomBarScreen
 import uz.mobiler.quran.ui.bottomNavigation.bottomNav.BottomNavGraph
+import uz.mobiler.quran.ui.theme.BottomItemSelectedColor
+import uz.mobiler.quran.ui.theme.TextColorGren
 import uz.mobiler.quran.vm.SurahViewModel
 
 @Composable
 fun MenuScreen(navController: NavHostController) {
-    val myViewModel = hiltViewModel<SurahViewModel>()
+
     var navControllerMy   = rememberNavController()
     Scaffold(bottomBar = { BottomBar(navController = navControllerMy)}
     ) {
@@ -67,7 +69,8 @@ fun RowScope.AddItem(
         selected = currentDestination?.hierarchy?.any {
             it.route == screen.route
         }==true,
-        unselectedContentColor = LocalContentColor.current.copy(alpha = ContentAlpha.disabled),
+        unselectedContentColor = TextColorGren,
+        selectedContentColor = BottomItemSelectedColor,
         onClick = {
             navController.navigate(screen.route){
                 popUpTo(navController.graph.findStartDestination().id)
