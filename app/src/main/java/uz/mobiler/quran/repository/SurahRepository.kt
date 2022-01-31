@@ -7,4 +7,5 @@ import javax.inject.Inject
 
 class SurahRepository @Inject constructor(private val surahApiService: SurahApiService) {
     suspend fun surah() = flow { emit(surahApiService.surah()) }
+    suspend fun surahInfo(id: Int) = flow { emit(surahApiService.surahInfo(id)) }
 }

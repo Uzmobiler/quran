@@ -7,4 +7,5 @@ sealed class Screen(var route:String) {
     object Quran:Screen(route = "quran_screen")
     object Prayer:Screen(route = "prayer_screen")
     object Settings:Screen(route = "settings_screen")
+    object Info:Screen(route = "info_screen")
 }

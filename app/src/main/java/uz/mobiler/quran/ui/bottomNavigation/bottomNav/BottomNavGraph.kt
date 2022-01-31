@@ -10,13 +10,14 @@ import androidx.navigation.compose.composable
 import androidx.navigation.navigation
 import uz.mobiler.quran.ui.bottomNavigation.bottomBar.BottomBarScreen
 import uz.mobiler.quran.ui.pages.*
+import uz.mobiler.quran.ui.screen.Screen
 import uz.mobiler.quran.vm.SurahViewModel
 
 @Composable
 fun BottomNavGraph(navController: NavHostController) {
     NavHost(navController = navController, startDestination = BottomBarScreen.Home.route) {
         composable(route = BottomBarScreen.Home.route) {
-            HomeScreen()
+            HomeScreen(navController)
         }
         composable(route = BottomBarScreen.Quran.route) {
             QuranScreen()
@@ -26,6 +27,12 @@ fun BottomNavGraph(navController: NavHostController) {
         }
         composable(route = BottomBarScreen.Settings.route) {
             SettingsScreen()
+        }
+        composable(Screen.Info.route + "/{id}") {
+            val id = it.arguments?.getString("id")
+            if (id != null) {
+                InfoScreen(id.toInt())
+            }
         }
     }
 }

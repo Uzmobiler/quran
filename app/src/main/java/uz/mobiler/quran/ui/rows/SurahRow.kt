@@ -6,6 +6,7 @@ import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.focusable
 import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.selection.selectable
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
@@ -20,17 +21,21 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.navigation.NavHostController
 import androidx.navigation.compose.rememberNavController
 import uz.mobiler.quran.R
 import uz.mobiler.quran.models.surah.Data
 import uz.mobiler.quran.ui.pages.SplashScreen
+import uz.mobiler.quran.ui.screen.Screen
 import uz.mobiler.quran.ui.theme.BottomItemSelectedColor
 
 @Composable
 fun SurahRow(data: Data) {
     Column(modifier = Modifier
         .fillMaxWidth()
-        .padding(5.dp).focusable(true)) {
+        .padding(5.dp)
+        .focusable(true)
+    ) {
         Row(
             verticalAlignment = Alignment.CenterVertically,
             modifier = Modifier
@@ -43,9 +48,13 @@ fun SurahRow(data: Data) {
             }
             Spacer(modifier = Modifier.width(7.dp))
             Column {
-                Text(text = data.name.transliteration.id, fontWeight = FontWeight.Bold,  color = Color.Black)
+                Text(
+                    text = data.name.transliteration.id,
+                    fontWeight = FontWeight.Bold,
+                    color = Color.Black
+                )
                 Row(verticalAlignment = Alignment.CenterVertically) {
-                    Text(text = data.revelation.id, fontSize = 10.sp,  color = Color.Black)
+                    Text(text = data.revelation.id, fontSize = 10.sp, color = Color.Black)
                     Spacer(modifier = Modifier.width(5.dp))
                     Box(
                         modifier = Modifier
@@ -54,16 +63,22 @@ fun SurahRow(data: Data) {
                             .background(Color.LightGray)
                     )
                     Spacer(modifier = Modifier.width(5.dp))
-                    Text(text = "${data.numberOfVerses} ayat", fontSize = 10.sp,  color = Color.Black)
+                    Text(
+                        text = "${data.numberOfVerses} ayat",
+                        fontSize = 10.sp,
+                        color = Color.Black
+                    )
                 }
             }
             Spacer(modifier = Modifier.weight(1.0f))
             Text(text = data.name.short, color = BottomItemSelectedColor)
         }
-        Row(modifier = Modifier
-            .fillMaxWidth()
-            .height(0.5.dp)
-            .background(Color.LightGray)) {}
+        Row(
+            modifier = Modifier
+                .fillMaxWidth()
+                .height(0.5.dp)
+                .background(Color.LightGray)
+        ) {}
     }
 
 }
